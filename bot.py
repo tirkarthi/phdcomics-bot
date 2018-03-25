@@ -64,6 +64,7 @@ if __name__ == "__main__":
                 continue
             date = comic_dict[comic_id]['date']
             title = comic_dict[comic_id]['title']
+            title = "{0} ({1})".format(title, date)
             comic_url = BASE_URL + comic_id
             print("Submitting {0} with title '{1}'".format(comic_url, title))
             reddit.subreddit(subreddit).submit(title, url=comic_url)
